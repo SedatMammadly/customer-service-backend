@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  customer:
+    image: postgres
+    container_name: customer_db
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: Customer
+    ports:
+      - "5432:5432"
+    volumes:
+      - customerData:/var/lib/postgresql/data
+
+volumes:
+  customerData: {}
